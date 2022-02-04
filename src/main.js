@@ -3,13 +3,12 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import { faAdjust } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight, faPlusCircle, faAdjust, faTh, fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import BootstrapVue from 'bootstrap-vue'
 require("./plugins")
-library.add(faCaretRight, faPlusCircle, faAdjust)
+import "./scss/_main.scss"
+library.add(faCaretRight, faPlusCircle, faAdjust, faTh, fas)
 Vue.use(BootstrapVue)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
