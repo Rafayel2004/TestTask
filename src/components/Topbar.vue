@@ -6,13 +6,13 @@
       </div>
       <div class="ms-auto mt-3">
         <div>
-          <span class="icon-base active" @click="changeStyle('cube')">
+          <span class="icon-base" @click="changeStyle('cube')">
           <font-awesome-icon class="fa-lg " icon="th"/>
             </span>
           <span class="icon-base" @click="changeStyle('alightCenter')">
           <font-awesome-icon class="fa-lg " icon="align-center"/>
           </span>
-            <span class="icon-base active" @click="search">
+            <span class="icon-base" @click="search">
           <font-awesome-icon class="fa-lg " icon="search"/>
           </span>
           <input @input="searchBook" type="text" class="border" ref="search" v-if="openSearch">
@@ -37,10 +37,6 @@
     margin-right: 10px;
     padding: 5px;
   }
-  .active {
-    background-color: #F9F9F9;
-  }
-
 </style>
 
 <script>

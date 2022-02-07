@@ -9,7 +9,7 @@
             <p class="mb-0">My Books</p>
           </div>
           <div class="ml-auto">
-            <h4 class="p-1 text-secondary book-count">15</h4>
+            <h4 class="p-1 text-secondary book-count">{{bookCount}}</h4>
           </div>
         </li>
         <li class="sidebar-li d-flex ">
@@ -28,7 +28,7 @@
               <p class="mb-0">Dark Mode</p>
             </div>
             <div class="ml-auto custom-control custom-switch">
-              <toggle-button :width="40"/>
+              <toggle-button @change="changeMode" :width="40"/>
             </div>
           </li>
         </ul>
@@ -57,6 +57,20 @@
 
 <script>
  export default {
-
+   data() {
+     return {
+       bookCount: null,
+     }
+   },
+    methods: {
+      changeMode() {
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      }
+    },
+   mounted() {
+     this.axios.get('/books').then((res) => {
+       this.bookCount = res.data.length;
+     })
+   },
  }
 </script>

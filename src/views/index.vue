@@ -1,7 +1,7 @@
 <template>
   <div class="container p-0 mt-5 ml-1">
     <Topbar @changeStyle="changeStyle" @searchBook="searchBook" />
-      <table v-if="alignCenter" class="table table-borderless">
+      <table v-if="alignCenter" class="table table-borderless" :class="$vuetify.theme.dark == true ? 'table-dark': ''">
         <thead>
         <tr>
           <th>Book Title and Author</th>
